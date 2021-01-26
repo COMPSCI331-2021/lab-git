@@ -15,13 +15,13 @@ import org.junit.Assert;
 public class CounterTest {
 
 	/**
-	 * Test method for {@link t1.Counter#increment()}.
+	 * Test method for {@link util.Counter#increment()}.
 	 */
-	public t1.Counter counter = null;
+	public util.Counter counter = null;
 
 	@Before
 	public void setUp() {
-		counter = new t1.Counter();
+		counter = new util.Counter();
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class CounterTest {
 	}
 
 	/**
-	 * Test method for {@link t1.Counter#decrement()}.
+	 * Test method for {@link util.Counter#decrement()}.
 	 */
 	@Test
 	public void testDecrement() {
@@ -42,7 +42,7 @@ public class CounterTest {
 	}
 
 	/**
-	 * Test method for {@link t1.Counter#reset()}.
+	 * Test method for {@link util.Counter#reset()}.
 	 */
 	@Test
 	public void testReset() {
@@ -50,14 +50,34 @@ public class CounterTest {
 		Assert.assertEquals(0, counter._ctr);
 	}
 
-	/**
-	 * Test method for {@link t1.Counter#multiplyBy(int)}.
-	 */
 	@Test
-	public void testMultiplyBy() {
-		counter.increment();
-		counter.multiplyBy(3);
-		Assert.assertEquals(3, counter._ctr);
+	public void testIncrementToEven(){
+		counter._ctr = 5;
+		counter.incrementToEven();
+		Assert.assertEquals(6, counter._ctr);
 	}
+	
+	
+	@Test
+	public void testDecrementToEven(){
+		counter._ctr = -12;
+		counter.decrementToEven();
+		Assert.assertEquals(-14, counter._ctr);
+	}
+	
+	@Test
+	public void testIncrementToPrime(){
+		counter._ctr = 7;
+		counter.incrementToPrime();
+		Assert.assertEquals(11, counter._ctr);
+	}
+	
+	@Test
+	public void testDecrementToPrime(){
+		counter._ctr = 37;
+		counter.decrementToPrime();
+		Assert.assertEquals(31, counter._ctr);
+	}
+	
 
 }
