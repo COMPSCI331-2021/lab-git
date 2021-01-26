@@ -1,4 +1,5 @@
-#Git Branch
+Git Branch
+======================
 In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three separate features on the Counter sample.  
 
 ### Feature 1 by Dev1 
