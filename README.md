@@ -1,15 +1,16 @@
 #Git Branch
 In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three separate features on the Counter sample.  
 
-## Feature 1 by Dev1 
+### Feature 1 by Dev1 
 implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
 
-## Feature 2 by Dev2
+### Feature 2 by Dev2
 implement the increment method **incrementToPrime()** that increases the counter to the next prime number. implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
 
-## Feature 3 by Dev3
+### Feature 3 by Dev3
 implement the **countFrequency()** method. This method count the number of word in the given sentence. Also, you must refactor the code implemented by dev1 and dev2. The code refactoring should improve the overall quality of source code such as getting rid of replicate code, apply the standard code convention, etc.
 
+##Development Process
 Your team must work on these features on three separately branches namely feature1, feature2 and feature3 before merging them into the master branch. The following steps guide you on the overall process of this development.
 
 <ol>
