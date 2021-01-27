@@ -27,10 +27,11 @@ Your team must work on these features on three separately branches namely featur
 ##New Branch, Build and Test
 On Eclipse, you can create a new branch by going to Team > switch To > New Branch. Make sure you are on your own branch before making a commit. There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=<test script> test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
 
-After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch pass designated test. The figure below show the log file (can be accessed thrugh Github's Actions tab) after dev1 commit on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
+After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch pass designated test. The figure below show the log file (can be accessed from Github's Actions tab) after dev1 commit on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
 
 ![](testrun-github.png)
 
+===========
 ##Pull Request
 The implementation of new features are separately stored on different branches. In order to combine all implementations, we need to merge the source from feature1-3 branches into the master branch. To achieve this, we create pull requests on Github by going to Pull Request tab and click new pull request button. Then, select the branch to merge into master branch, Github will show the comparison of files on master branch and feature branch as the figure below.
 
