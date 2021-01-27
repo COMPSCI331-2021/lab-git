@@ -1,6 +1,6 @@
 Git Branch
 ======================
-In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three separate features on the Counter sample.  
+In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three different features on the Counter program.  
 
 ### Feature 1 by Dev1 
 implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
