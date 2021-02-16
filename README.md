@@ -94,11 +94,10 @@ To see the result of building and running test on Github, you can click on Actio
 <h2>Answer the following questions</h2>
 <ul>
   <li>What is different between fetch and pull?</li>
-  <li>What is happen if dev2 or dev3 does not pull the code before committing and pushing to git?</li>
   <li>Can you define a new CI-CD workflow to run a specific test such as testMultiplyBy?</li>
 </ul>
 Note your answers here, and in your journal.
 
 ```
-Your thoughts here.
+Your answers here.
 ```
