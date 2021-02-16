@@ -2,7 +2,7 @@ Lab - Git
 ======================
 This lab introduces you how the basic of git and how to work together as a team on the same repository.
 
-##Exercise 1 - Basic Git
+## Exercise 1 - Basic Git
 You must perform three tasks to fix faulty in the source code and make all tests passed. After you finish each task, please commit and push your changes (you MUST write a meaningful commit message to explain the changes committed) on the master branch. Here is the steps of performing these three tasks by group of three developers: Dev1, Dev2 and Dev3.
 <ol>
   <li>Dev1,2,3 - clone the project to local repository using Eclipse, 
@@ -28,7 +28,7 @@ Fix the faulty in Counter decrement(). All code changes and relevant commits mus
 ***Task 3: Reset Fix***
 Fix the faulty in Counter reset(). All code changes and relevant commits must be performed on the master branch.
 
-<h2>Code Synchonisation</h2>
+#### Code Synchonisation
 When dev2 and dev3 try to commit and push the source code, the push should be fail and show the error as shown in the figure below. This is because dev1 has already push the source code to Git so the source code that dev2 and dev3 are not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
 
 ![](rejected-commit.png)
@@ -36,7 +36,7 @@ When dev2 and dev3 try to commit and push the source code, the push should be fa
 After you receive this rejection, you have to perform 'pull to merge' operation. This operation will combine the source code from the remote repository to your repository. Then, resolve any conflict if there is any and push the source code again. 
 
 
-##Exercise 2 - Git Branches
+## Exercise 2 - Git Branches
 In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three different features on the Counter program.  
 
 Feature 1 by Dev1 implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
