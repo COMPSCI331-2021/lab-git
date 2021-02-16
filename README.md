@@ -34,18 +34,7 @@ When dev2 and dev3 try to commit and push the source code, the push should be fa
 
 After you receive this rejection, you have to perform 'pull to merge' operation. This operation will combine the source code from the remote repository to your repository. Then, resolve any conflict if there is any and push the source code again. 
 
-<h2>Build & Run project on GitHub</h2>
-To see the result of building and running test on Github, you can click on Action tab. GitHub Action is CI-CD pipeline provided by GitHub. It is similar to other CI-CD pipeline platform e.g. Travis CI, Jenkins etc. In this project, there is a workflow already defined namely Github Classroom, as shown in the figure below. This workflow is used for auto grading purpose. Every time you push the code on your repository, this workflow will be queued to execute automatically. You have to ensure that after your team made the last commit to fix all faults, the execution of this workflow runs successfully without any error (as the figure below show the success execution of last run). 
 
-![](github-action.png)
-
-
-<h2>Answer the following questions</h2>
-<ul>
-  <li>What is different between fetch and pull?</li>
-  <li>What is happen if dev2 or dev3 does not pull the code before committing and pushing to git?</li>
-  <li>Can you define a new CI-CD workflow to run a specific test such as testMultiplyBy?</li>
-</ul>
 
 
 #Exercise 2 - Git Branches
@@ -97,6 +86,20 @@ On the approval as the figure above shown, Github informs us that there is no co
 
 After that, the implementation of feature will be added into the master branch. You have to repeat the same process to merge all three features into the master branch.
   
-After all branches have been merged into the master branch, you have to check if the execution of Github classroom workflow runs successfully without any test fails.
- 
+<h2>Build & Run project on GitHub</h2>
+To see the result of building and running test on Github, you can click on Action tab. GitHub Action is CI-CD pipeline provided by GitHub. It is similar to other CI-CD pipeline platform e.g. Travis CI, Jenkins etc. In this project, there is a workflow already defined namely Github Classroom, as shown in the figure below. This workflow is used for auto grading purpose. Every time you push the code on your repository, this workflow will be queued to execute automatically. You have to ensure that after your team made the last commit to combine all features and resolve all conflicts, the execution of this workflow runs successfully without any error (as the figure below show the success execution of last run). 
+
 ![](test-success.png)
+
+
+<h2>Answer the following questions</h2>
+<ul>
+  <li>What is different between fetch and pull?</li>
+  <li>What is happen if dev2 or dev3 does not pull the code before committing and pushing to git?</li>
+  <li>Can you define a new CI-CD workflow to run a specific test such as testMultiplyBy?</li>
+</ul>
+Note your answers here, and in your journal.
+
+```
+Your thoughts here.
+```
