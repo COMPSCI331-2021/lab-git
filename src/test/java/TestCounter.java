@@ -12,7 +12,7 @@ import org.junit.Assert;
  * @version [Current Date]
  *
  */
-public class CounterTest {
+public class TestCounter {
 
 	/**
 	 * Test method for {@link t1.Counter#increment()}.
