@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "testcounter",
+      "setup": "",
+      "run": "mvn -Dtest=TestCounter test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "testfeature1",
+      "setup": "",
+      "run": "mvn -Dtest=TestFeature1 test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "testfeature2",
+      "setup": "",
+      "run": "mvn -Dtest=TestFeature2 test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "testfeature3",
+      "setup": "",
+      "run": "mvn -Dtest=TestFeature3 test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
