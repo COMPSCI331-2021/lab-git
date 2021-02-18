@@ -42,6 +42,7 @@ Fix the faulty in Counter reset(). All code changes and relevant commits must be
 
 #### Code Synchonisation
 When Dev2 and Dev3 try to commit and push their changes, the push should be fail and show the error as shown in the figure below. This is because dev1 has already push the source code to Git so the source code that Dev2 and Dev3 is not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
+("non-fast-forward" is a complicated way to say that there is a newer version of the file being pushed on the remote repository, probably because someone else has changed the file and pushed it to the remote repository).
 
 ![](rejected-commit.png)
 
