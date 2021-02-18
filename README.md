@@ -1,23 +1,35 @@
 Lab - Git
 ======================
-This lab introduces you how the basic of git and how to work together as a team on the same repository.
+This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git.
+
+Issues arise when multiple people use the same git repository. The exercises in the lab explore some of them. It assumes you are working in a team of 3, consisting of team members Dev1, Dev2, and Dev 3.
 
 ## Exercise 1 - Basic Git
-You must perform three tasks to fix faulty in the source code and make all tests passed. After you finish each task, please commit and push your changes (you MUST write a meaningful commit message to explain the changes committed) on the master branch. Here is the steps of performing these three tasks by group of three developers: Dev1, Dev2 and Dev3.
+
+For this exercise the three team members will individually make changes fix
+faults in their own copy of the repository. The issue is then how to combine
+all of the changes into a single version on the remote repository.
+
+Each team member makes the change, commits it to their local repository (of
+course making meaningful comment messages!) and then attempt to push the
+changes to the remote repository. The first one should work without problems,
+but for the second and third, the local repositories are now out of date with
+respect to the remote repository. Note that all of this should be done on a
+the master branch. Using separate brances is in a later exercise.
+
 <ol>
-  <li>Dev1,2,3 - clone the project to local repository using Eclipse, 
+  <li>Dev1,2,3 - clone the project to the local repository. Doing this
+  in Eclipse as follows (note that use of Eclipse is not required):
   		<ul>
   			<li>import as a project from Git</li>
   			<li>Right click on project, Configure > Convert to Maven project</li>
   			<li>Run the project with package goal, all tests should fail</li>
   		</ul>
-  <li>Dev1,2,3 - performs task 1,2 and 3 respectively on their own local source code</li>
-  <li>Dev1 - stage, commit and push your changes for task 1</li>
-  <li>Dev2 - perform code synchonisation as explained below and push your changes for task 2</li>
-  <li>Dev3 - perform code synchonisation as explained below and push your changes for task 3</li>
+  <li>Dev1,2,3 - performs tasks 1, 2 and 3 (below) respectively on their own local source code</li>
+  <li>Dev1 - stage, commit and push the changes for task 1</li>
+  <li>Dev2 - perform code synchonisation as explained below and push the changes for task 2</li>
+  <li>Dev3 - perform code synchonisation as explained below and push the changes for task 3</li>
 </ol>
-
-
 
 ***Task 1: Increment Fix***
 Fix the faulty in Counter increment(). All code changes and relevant commits must be performed on the master branch.
@@ -29,7 +41,7 @@ Fix the faulty in Counter decrement(). All code changes and relevant commits mus
 Fix the faulty in Counter reset(). All code changes and relevant commits must be performed on the master branch.
 
 #### Code Synchonisation
-When dev2 and dev3 try to commit and push the source code, the push should be fail and show the error as shown in the figure below. This is because dev1 has already push the source code to Git so the source code that dev2 and dev3 are not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
+When Dev2 and Dev3 try to commit and push their changes, the push should be fail and show the error as shown in the figure below. This is because dev1 has already push the source code to Git so the source code that Dev2 and Dev3 is not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
 
 ![](rejected-commit.png)
 
