@@ -1,5 +1,7 @@
 Lab - Git
 ======================
+Making a change
+
 This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git.
 
 Issues arise when multiple people use the same git repository. The exercises in the lab explore some of them. It assumes you are working in a team of 3, consisting of team members Dev1, Dev2, and Dev 3.
