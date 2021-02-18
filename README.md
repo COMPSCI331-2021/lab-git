@@ -1,6 +1,6 @@
 Lab - Git
 ======================
-Experimenting
+Experimenting Going with ewan's local
 
 This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git.
 
