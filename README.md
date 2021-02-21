@@ -62,10 +62,21 @@ Note the comment about <tt>git pull...</tt>, and you can ignore the
 "fast-forwards" hint.
 
 What Dev2 and Dev3 now need to do (first one, then the other, otherwise the
-same proble will occur) is perform a 'pull to merge'. This is done by issuing
+same problem will occur) is perform a 'pull to merge'. This is done by issuing
 a "pull" either through the IDE or command line (<tt>git pull</tt>).
 
-Then examine the file. Both the remote and local repositories have changes, and they are different. When the <tt>pull</tt> is done (really the <tt>merge</tt> that is parge of the <tt>pull</tt>), the two sets of changes are merged in to the file, with annotations to show which is which. You will see something like:
+From Eclipse, ensure "Merge" is selected when doing the merge.
+
+![](pullmerge.png)
+
+From the command line when you do the command you will see something like:
+```
+Auto-merging filethatwaschanged.txt
+CONFLICT (content): Merge conflict in filethatwaschanged.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Now the file affected (in this case <tt>filethatwaschanged.txt</tt>) will have both sets of changes. When the <tt>pull</tt> is done (really the <tt>merge</tt> that is parge of the <tt>pull</tt>), the two sets of changes are merged into the file, with annotations to show which is which. This will be shown in the file with something like:
 
 ```
 <<<<<<< HEAD
@@ -76,7 +87,7 @@ the other set of changes
 ```
 
 What the dev needs to do is figure out how to integrate these two sets of
-changes. How this is done depends on exactly what the changes are. The
+changes, generally referred to as resolving the conflict. How this is done depends on exactly what the changes are. The
 main thing is that the annotations (<tt>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</tt>,
 <tt>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</tt>,
 <tt>======</tt>) have to be removed. For example:
@@ -84,8 +95,10 @@ main thing is that the annotations (<tt>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</tt>,
 the other set of changes
 one set of changes
 ```
-In this case the decision was made alter the order the changes appear
-in the file.
+In this case the decision was made alter the order the changes appear in the
+file. Now the file can be committed and pushed to the remote repository.
+
+Once both Dev2 and Dev3 have resolved the conflicts this exercise is complete. 
 
 ## Exercise 2 - Git Branches
 
