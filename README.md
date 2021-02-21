@@ -1,6 +1,5 @@
 Lab - Git
 ======================
-Experimenting Going with ewan's local
 
 This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git.
 
@@ -45,17 +44,54 @@ Fix the faulty in Counter reset(). All code changes and relevant commits must be
 #### Code Synchonisation
 
 When Dev2 and Dev3 try to commit and push their changes, the push should be fail and show the error as shown in the figure below (Eclipse). This is because dev1 has already push the source code to Git so the source code that Dev2 and Dev3 is not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
-("non-fast-forward" is a complicated way to say that there is a newer version of the file being pushed on the remote repository, probably because someone else has changed the file and pushed it to the remote repository).
 
 ![](rejected-commit.png)
 
-After you receive this rejection, you have to perform 'pull to merge' operation. This operation will combine the source code from the remote repository to your repository. Then, resolve any conflict if there is any and push the source code again. 
+"non-fast-forward" is a complicated way to say that there is a newer version of the file being pushed on the remote repository, probably because someone else has changed the file and pushed it to the remote repository. The command line message is slightly more useful:
 
+```
+! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/COMPSCI331-2021/lab-git.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+Note the comment about <tt>git pull...</tt>, and you can ignore the
+"fast-forwards" hint.
+
+What Dev2 and Dev3 now need to do (first one, then the other, otherwise the
+same proble will occur) is perform a 'pull to merge'. This is done by issuing
+a "pull" either through the IDE or command line (<tt>git pull</tt>).
+
+Then examine the file. Both the remote and local repositories have changes, and they are different. When the <tt>pull</tt> is done (really the <tt>merge</tt> that is parge of the <tt>pull</tt>), the two sets of changes are merged in to the file, with annotations to show which is which. You will see something like:
+
+```
+<<<<<<< HEAD
+one set of changes
+=======
+the other set of changes
+>>>>>>> master
+```
+
+What the dev needs to do is figure out how to integrate these two sets of
+changes. How this is done depends on exactly what the changes are. The
+main thing is that the annotations (<tt>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</tt>,
+<tt>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</tt>,
+<tt>======</tt>) have to be removed. For example:
+```
+the other set of changes
+one set of changes
+```
+In this case the decision was made alter the order the changes appear
+in the file.
 
 ## Exercise 2 - Git Branches
-In this lab exercise, we will demonstrate how branch can be created on Git. Three developers namely dev1, dev2 and dev3 must add three different features on the Counter program.  
 
-Feature 1 by Dev1 implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
+For this exercise, the three developers will again make three changes (this time adding features), but this time on different branches.
+
+Feature 1 by Dev1 is to implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
 
 Feature 2 by Dev2 - implement the increment method **incrementToPrime()** that increases the counter to the next prime number. implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
 
