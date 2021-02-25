@@ -162,7 +162,6 @@ The implementation of new features are separately stored on different branches. 
 
 If there is no conflict in the file, the branches can be automatically merged. However, if there is any conflict, the developer must resolve it when approving the pull request. In this case, you can click on create pull request button and enter the message of this pull request for later approval.
 
-
 ![](src/resources/pull-request2.png)
 
 On the approval as the figure above shown, Github informs us that there is no conflict so we can choose to merge the pull request. However, if there is conflict as sample shown below, you must resolve the conflict before you can merge it into the master.
