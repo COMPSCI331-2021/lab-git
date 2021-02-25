@@ -1,15 +1,24 @@
 Lab - Git
 ======================
 
-This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git.
+This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git. Make sure to look at the details of assessment at the end of this file.
 
 Issues arise when multiple people use the same git repository. The exercises in the lab explore some of them. It assumes you are working in a team of 3, consisting of team members Dev1, Dev2, and Dev 3.
 
 ## Exercise 1 - Basic Git
 
-For this exercise the three team members will individually make changes fix
-faults in their own copy of the repository. The issue is then how to combine
-all of the changes into a single version on the remote repository.
+For this exercise the three team members will individually complete the tasks
+below to fix faults in their own copy of the repository. The issue is then how
+to combine all of the changes into a single version on the remote repository.
+
+***Task 1: Increment Fix***
+Fix the faulty in Counter increment(). All code changes and relevant commits must be performed on the master branch.
+
+***Task 2: Decrement Fix***
+Fix the faulty in Counter decrement(). All code changes and relevant commits must be performed on the master branch.
+
+***Task 3: Reset Fix***
+Fix the faulty in Counter reset(). All code changes and relevant commits must be performed on the master branch.
 
 Each team member makes the change, commits it to their local repository (of
 course making meaningful comment messages!) and then attempt to push the
@@ -32,14 +41,15 @@ the master branch. Using separate brances is in a later exercise.
   <li>Dev3 - perform code synchonisation as explained below and push the changes for task 3</li>
 </ol>
 
-***Task 1: Increment Fix***
-Fix the faulty in Counter increment(). All code changes and relevant commits must be performed on the master branch.
+#### Continuous Integration ####
 
-***Task 2: Decrement Fix***
-Fix the faulty in Counter decrement(). All code changes and relevant commits must be performed on the master branch.
-
-***Task 3: Reset Fix***
-Fix the faulty in Counter reset(). All code changes and relevant commits must be performed on the master branch.
+In COMPSCI331 we will be using the continuous integration (CI) features of
+GitHub. Basically this means that whenever you push something to your
+repository, some tests will be run. You will receive email summarising the
+results of the tests. The results are also available on GitHub. Further
+information about CI are below and more will be provided in later labs. For
+now, just be aware that any push (even if you are not changing code) will
+cause the tests to be run and email sent to you.
 
 #### Code Synchonisation
 
@@ -168,14 +178,23 @@ To see the result of building and running test on Github, you can click on Actio
 
 ![](test-success.png)
 
+<h2>Assessment</h2>
 
-<h2>Answer the following questions</h2>
-<ul>
-  <li>What is different between fetch and pull?</li>
-  <li>Can you define a new CI-CD workflow to run a specific test such as testMultiplyBy?</li>
-</ul>
-Note your answers here, and in your journal.
+The marking of this lab will be based on your team repository as of Friday 19
+March 1700hrs. As well as the changes made to it for the above exercises, you
+must include a file <tt>Team.md</tt> containing the list of members in your
+team and a brief summary of what role each member played. For example:
 
-```
-Your answers here.
-```
+* Ewan - Dev1 in exercise 1, Dev3 in exercise 2
+* Paramvir - Dev3 in exercise 1, Dev2 in exercise 2
+* Nacha - Dev2 in exercise 1, Dev1 in exercise 1
+
+If this file is not provided then there will be a 50% penalty.
+
+Assessment will be performed by examining the commit logs and other
+information associated with your team repository.  You must demonstrate that
+you have engaged with the lab material and fully participated with the
+team. This means we expect to see non-trivial commits, with meaningful commit
+messages, corresponding to each exercise. Different team members will do
+different things and different times, but we will be looking for evidence that
+there was cooperation and collaboration.
