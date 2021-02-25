@@ -112,7 +112,8 @@ Once both Dev2 and Dev3 have resolved the conflicts this exercise is complete.
 
 ## Exercise 2 - Git Branches
 
-For this exercise, the three developers will again make three changes (this time adding features), but this time on different branches. **Before starting this exercise, please make sure that all three developers pull the latest source code from the repository.
+For this exercise, the three developers will again make three changes (this time adding features), but this time on different branches. 
+**Before starting this exercise, please make sure that all three developers pull the latest source code from the repository.
 
 Feature 1 by Dev1 is to implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
 
