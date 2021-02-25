@@ -42,4 +42,5 @@ seems to happen automatically).
     ![](src/resources/existing-team-join.png)
 
 1. Complete the invitation process.
+
     ![](src/resources/invitation.png)
