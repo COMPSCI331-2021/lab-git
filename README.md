@@ -106,31 +106,44 @@ For this exercise, the three developers will again make three changes (this time
 
 Feature 1 by Dev1 is to implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
 
-Feature 2 by Dev2 - implement the increment method **incrementToPrime()** that increases the counter to the next prime number. implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
+Feature 2 by Dev2 is to implement the increment method **incrementToPrime()** that increases the counter to the next prime number. implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
 
-Feature 3 by Dev3 - implement the **countFrequency()** method. This method count the number of word in the given sentence. Also, you must refactor the code implemented by dev1 and dev2. The code refactoring should improve the overall quality of source code such as getting rid of replicate code, apply the standard code convention, etc.
+Feature 3 by Dev3 is to implement the **countFrequency()** method. This method count the number of word in the given sentence. Also, you must refactor the code implemented by dev1 and dev2. The code refactoring should improve the overall quality of source code such as getting rid of replicate code, apply the standard code convention, etc.
 
 #### Development Process
-Your team must work on these features on three separately branches namely feature1, feature2 and feature3 before merging them into the master branch. The following steps guide you on the overall process of this development.
+
+Each dev works on these features on three separately branches namely feature1, feature2 and feature3 before merging them into the master branch. The overall process is:
 
 <ol>
-  <li>Dev1,2,3 - clone the project to local repository using Eclipse</li>
-  <li>Dev1,2,3 - implement feature 1,2 and 3 respectively on their own local source code</li>
-  <li>Dev1 - stage, commit and push your changes on feature1 branch</li>
-  <li>Dev2 - stage, commit and push your changes on feature2 branch</li>
-  <li>Dev3 - stage, commit and push your changes on feature3 branch</li>
+  <li>Dev1,2,3 - clone the project to local repository</li>
+  <li>Dev1,2,3 - implement feature 1, 2 and 3 respectively locally</li>
+  <li>Dev1 - stage, commit and push changes on the feature1 branch</li>
+  <li>Dev2 - stage, commit and push changes on the feature2 branch</li>
+  <li>Dev3 - stage, commit and push changes on the feature3 branch</li>
   <li>Dev1,2,3 - create a pull request to merge from their own branch to the master branch</li>
   <li>team leader approves the pull requests</li>
 </ol>
 
 #### New Branch, Build and Test
-On Eclipse, you can create a new branch by going to Team > switch To > New Branch. Make sure you are on your own branch before making a commit. There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=<test script> test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
 
-After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch pass designated test. The figure below show the log file (can be accessed from Github's Actions tab) after dev1 commit on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
+Each dev needs to create a branch for the feature they are implementing as named above. Creating a branch from the command line is done with:
+```
+prompt> git branch feature1
+```
+In Eclipse, you can create a new branch by going to Team > switch To > New
+Branch.
+
+Once you have made the changes needed, commit them.  Make sure you are on your
+own branch before making a commit.
+
+There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=<test script> test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
+
+After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch passes designated test. The figure below shows the log file (it also can be accessed from Github's Actions tab) after Dev1 has commited on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
 
 ![](testrun-github.png)
 
-
+There are a number of tutorials available on-line. A reasonable one
+(although with more detail than needed for this lab) is by [Atlassian](https://www.atlassian.com/git/tutorials/using-branches)
 
 #### Pull Request
 The implementation of new features are separately stored on different branches. In order to combine all implementations, we need to merge the source from feature1-3 branches into the master branch. To achieve this, we create pull requests on Github by going to Pull Request tab and click new pull request button. Then, select the branch to merge into master branch, Github will show the comparison of files on master branch and feature branch as the figure below.
@@ -148,7 +161,7 @@ On the approval as the figure above shown, Github informs us that there is no co
 ![](pull-request3.png)
 
 
-After that, the implementation of feature will be added into the master branch. You have to repeat the same process to merge all three features into the master branch.
+After that, the implementation of the feature will be added into the master branch. You have to repeat the same process to merge all three features into the master branch.
   
 <h2>Build & Run project on GitHub</h2>
 To see the result of building and running test on Github, you can click on Action tab. GitHub Action is CI-CD pipeline provided by GitHub. It is similar to other CI-CD pipeline platform e.g. Travis CI, Jenkins etc. In this project, there is a workflow already defined namely Github Classroom, as shown in the figure below. This workflow is used for auto grading purpose. Every time you push the code on your repository, this workflow will be queued to execute automatically. You have to ensure that after your team made the last commit to combine all features and resolve all conflicts, the execution of this workflow runs successfully without any error (as the figure below show the success execution of last run). 
