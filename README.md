@@ -41,6 +41,9 @@ the master branch. Using separate brances is in a later exercise.
   <li>Dev3 - perform code synchonisation as explained below and push the changes for task 3</li>
 </ol>
 
+### Testing ###
+There are four test scripts in /src/test folder. The `TestCounter` is for testing changes you have to perform for this exercise, while the others are for the next exercise. You should read the source code in this test script and find the test method that test your task, for example, `testIncrement()` is for testing Task1. After you make the change according to your task, you can execute this test script by running Maven with the `test` goal. This will compile and run all tests on the project. Please make sure that the test method for your task is pass. 
+
 #### Continuous Integration ####
 
 In COMPSCI331 we will be using the continuous integration (CI) features of
@@ -147,7 +150,7 @@ Branch.
 Once you have made the changes needed, commit them.  Make sure you are on your
 own branch before making a commit.
 
-There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=<test script> test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
+There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=[test script] test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
 
 After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch passes designated test. The figure below shows the log file (it also can be accessed from Github's Actions tab) after Dev1 has commited on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
 
