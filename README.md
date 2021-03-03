@@ -1,7 +1,9 @@
 Lab - Git
 ======================
 
-This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git. Make sure to look at the details of assessment at the end of this file. You will need to set up your teams. This process is described [here](JoiningTeams.md)      
+This lab explores the use of git (and GitHub) by a team. It assumes you are already familiar with the basics of git. Make sure to look at the details of assessment at the end of this file.
+
+You must first join a "group" on Canvas (details on the Assignment page for the lab). Then you will need to set up your teams. This process is described [here](JoiningTeams.md)      
 
 Issues arise when multiple people use the same git repository. The exercises in the lab explore some of them. It assumes you are working in a team of 3, consisting of team members Dev1, Dev2, and Dev 3.
 
@@ -201,4 +203,5 @@ you have engaged with the lab material and fully participated with the
 team. This means we expect to see non-trivial commits, with meaningful commit
 messages, corresponding to each exercise. Different team members will do
 different things and different times, but we will be looking for evidence that
-there was cooperation and collaboration.
+there was cooperation and collaboration. Examples including making useful
+commits, and commenting on actions by other team members.
