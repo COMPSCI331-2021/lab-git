@@ -25,7 +25,7 @@ course making meaningful comment messages!) and then attempt to push the
 changes to the remote repository. The first one should work without problems,
 but for the second and third, the local repositories are now out of date with
 respect to the remote repository. Note that all of this should be done on a
-the master branch. Using separate brances is in a later exercise.
+the master branch. Using separate branches is in a later exercise.
 
 <ol>
   <li>Dev1,2,3 - clone the project to the local repository. Doing this
@@ -41,8 +41,8 @@ the master branch. Using separate brances is in a later exercise.
   <li>Dev3 - perform code synchonisation as explained below and push the changes for task 3</li>
 </ol>
 
-### Testing ###
-There are four test scripts in /src/test folder. The `TestCounter` is for testing changes you have to perform for this exercise, while the others are for the next exercise. You should read the source code in this test script and find the test method that test your task, for example, `testIncrement()` is for testing Task1. After you make the change according to your task, you can execute this test script by running Maven with the `test` goal. This will compile and run all tests on the project. Please make sure that the test method for your task is pass. 
+#### Testing ####
+There are four test scripts in /src/test folder. The `TestCounter` is for testing changes you have to perform for this exercise, while the others are for the next exercise. You should read the source code in this test script and find the test method that test your task, for example, `testIncrement()` is for testing Task1. After you make the change according to your task, you can execute this test script by running Maven with the `test` goal. This will compile and run all tests on the project. The task is complete when the test relevant to the task passes.
 
 #### Continuous Integration ####
 
@@ -56,11 +56,11 @@ cause the tests to be run and email sent to you.
 
 #### Code Synchonisation
 
-When Dev2 and Dev3 try to commit and push their changes, the push should be fail and show the error as shown in the figure below (Eclipse). This is because dev1 has already push the source code to Git so the source code that Dev2 and Dev3 is not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore give the rejected message.
+When Dev2 and Dev3 try to commit and push their changes, the push should be fail and show the error as shown in the figure below (Eclipse). This is because Dev1 has already pushed the source code to Git so the source code that Dev2 and Dev3 have is not in sync with the code on the remote repository. Github does not allow you to push the source code for this reason and therefore rejects the attempt.
 
 ![](src/resources/rejected-commit.png)
 
-"non-fast-forward" is a complicated way to say that there is a newer version of the file being pushed on the remote repository, probably because someone else has changed the file and pushed it to the remote repository. The command line message is slightly more useful:
+The term "non-fast-forward" is a complicated way to say that there is a newer version of the file being pushed on the remote repository, usually because someone else has changed the file and pushed it to the remote repository. The command line message is slightly more useful:
 
 ```
 ! [rejected]        master -> master (non-fast-forward)
@@ -89,7 +89,7 @@ CONFLICT (content): Merge conflict in filethatwaschanged.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Now the file affected (in this case <tt>filethatwaschanged.txt</tt>) will have both sets of changes. When the <tt>pull</tt> is done (really the <tt>merge</tt> that is parge of the <tt>pull</tt>), the two sets of changes are merged into the file, with annotations to show which is which. This will be shown in the file with something like:
+Now the file affected (in this case <tt>filethatwaschanged.txt</tt>) will have both sets of changes. When the <tt>pull</tt> is done (really the <tt>merge</tt> that is part of the <tt>pull</tt>), the two sets of changes are merged into the file, with annotations to show which is which. This will be shown in the file with something like:
 
 ```
 <<<<<<< HEAD
@@ -118,15 +118,15 @@ Once both Dev2 and Dev3 have resolved the conflicts this exercise is complete.
 For this exercise, the three developers will again make three changes (this time adding features), but this time on different branches. 
 **Before starting this exercise, please make sure that all three developers pull the latest source code from the repository.**
 
-Feature 1 by Dev1 is to implement the increment method **incrementToEven()** that increases the counter to the next even number. implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
+Feature 1 by Dev1 is to implement the increment method **incrementToEven()** that increases the counter to the next even number, and implement the decrement method **decrementToEven()** that decrease the counter the previous even number.
 
-Feature 2 by Dev2 is to implement the increment method **incrementToPrime()** that increases the counter to the next prime number. implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
+Feature 2 by Dev2 is to implement the increment method **incrementToPrime()** that increases the counter to the next prime number, and implement the decrement method **decrementToPrime()** that decrease the counter the previous prime number.
 
-Feature 3 by Dev3 is to implement the **countFrequency()** method. This method count the number of word in the given sentence. Also, you must refactor the code implemented by dev1 and dev2. The code refactoring should improve the overall quality of source code such as getting rid of replicate code, apply the standard code convention, etc.
+Feature 3 by Dev3 is to implement the **countFrequency()** method. This method count the number of words in the given sentence. Dev3 should also consider refactoring the code implemented by Dev1 and Dev2. The code refactoring should improve the overall quality of source code such as getting rid of duplicate code, apply the standard code convention, and so on.
 
 #### Development Process
 
-Each dev works on these features on three separately branches namely feature1, feature2 and feature3 before merging them into the master branch. The overall process is:
+Each dev works on these features on three separate branches, namely feature1, feature2 and feature3, before merging them into the master branch. The overall process is:
 
 <ol>
   <li>Dev1,2,3 - clone the project to local repository</li>
@@ -150,34 +150,35 @@ Branch.
 Once you have made the changes needed, commit them.  Make sure you are on your
 own branch before making a commit.
 
-There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  You can test only a feature on your branch by put in goal in maven as **-Dtest=[test script] test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
+There are three test scripts in place namely TestFeature1, TestFeature2 and TestFeature3 for testing each feature.  One feature can be tested on a branch by using the goal in maven as **-Dtest=[test script] test**. For example, **-Dtest=TestFeature1 test** is for testing feature 1.
 
-After you commit source code on your branch, github classroom workflow will be executed to test your code. Please make sure your code on the branch passes designated test. The figure below shows the log file (it also can be accessed from Github's Actions tab) after Dev1 has commited on feature1 branch; testfeature1 is success, while testfeature2 and testfeature3 fails. Similarly, the execution of feature2 branch should have testfeature2 sucess, while testfeature1 and testfeature3 fails.  
+After commiting the source code to a branch, Github classroom workflow (CI) will be executed. The figure below shows the log file (it also can be accessed from Github's Actions tab) after Dev1 has committed on feature1 branch; this shows testfeature1 has succeeded, while testfeature2 and testfeature3 has failed. Similarly, the execution of feature2 branch should have testfeature2 succeed, while testfeature1 and testfeature3 fails.  
 
 ![](src/resources/testrun-github.png)
 
 There are a number of tutorials available on-line. A reasonable one
 (although with more detail than needed for this lab) is by [Atlassian](https://www.atlassian.com/git/tutorials/using-branches)
 
-#### Pull Request
-The implementation of new features are separately stored on different branches. In order to combine all implementations, we need to merge the source from feature1-3 branches into the master branch. To achieve this, we create pull requests on Github by going to Pull Request tab and click new pull request button. Then, select the branch to merge into master branch, Github will show the comparison of files on master branch and feature branch as the figure below.
+#### Pull Request ####
+
+The implementation of new features are separately stored on different branches. In order to combine all implementations, the branches for each feature needs to be merged into the master branch. To achieve this, each dev creates a pull requests on Github by going to Pull Request tab and click 'new pull request'. Then, select the branch to merge into master branch. Github will show the comparison of files on master branch and feature branch as the figure below.
 
 ![](src/resources/pull-request1.png)
 
-If there is no conflict in the file, the branches can be automatically merged. However, if there is any conflict, the developer must resolve it when approving the pull request. In this case, you can click on create pull request button and enter the message of this pull request for later approval.
+If there is no conflict in the files, the branches can be automatically merged. However, if there is any conflict, the developer must resolve it when approving the pull request. This is done by clicking on 'Create pull request' and entering the message of this pull request for later approval.
 
 ![](src/resources/pull-request2.png)
 
-On the approval as the figure above shown, Github informs us that there is no conflict so we can choose to merge the pull request. However, if there is conflict as sample shown below, you must resolve the conflict before you can merge it into the master.
-
+On the approval as shown above, Github informs us that there is no conflict so we can choose to merge the pull request. However, if there is conflict as sample shown below, the conflict must be resolved before it can be merged into the master.
 
 ![](src/resources/pull-request3.png)
 
 
-After that, the implementation of the feature will be added into the master branch. You have to repeat the same process to merge all three features into the master branch.
+After that, the implementation of the feature will be added into the master branch. This process must be repeated for all three features.
   
-<h2>Build & Run project on GitHub</h2>
-To see the result of building and running test on Github, you can click on Action tab. GitHub Action is CI-CD pipeline provided by GitHub. It is similar to other CI-CD pipeline platform e.g. Travis CI, Jenkins etc. In this project, there is a workflow already defined namely Github Classroom, as shown in the figure below. This workflow is used for auto grading purpose. Every time you push the code on your repository, this workflow will be queued to execute automatically. You have to ensure that after your team made the last commit to combine all features and resolve all conflicts, the execution of this workflow runs successfully without any error (as the figure below show the success execution of last run). 
+## Build & Run project on GitHub ##
+
+To see the result of building and running tests on Github, go do the Action tab. GitHub Action is the CI-CD (continuous integration - continuous deployment) pipeline provided by GitHub. It is similar to other CI-CD pipeline platforms, e.g. Travis CI or Jenkins. In this project, there is a workflow already defined namely Github Classroom, as shown in the figure below. Every time code is pushed to the repository, this workflow will be queued to execute automatically. When this workflow runs successfully (as shown below), the exercise is complete.
 
 ![](src/resources/test-success.png)
 
